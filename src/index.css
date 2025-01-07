@@ -1,13 +1,298 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Light Theme */
+body.theme-light {
+  /* background-color: white; */
+  background: linear-gradient(90deg, #9bc9f055, #ffffff);
+  color: black;
 }
+
+/* Dark Theme */
+body.theme-dark {
+  background-color: #121212;
+  color: #90bcd1
+}
+
+
+body {
+  /* background: linear-gradient(90deg, #9bc9f055, #ffffff); */
+  overflow-x: hidden;
+}
+
+a {
+  color: #000;
+}
+
+.zoom-out-on-hover {
+  transition: transform 0.3s ease-in-out;
+}
+
+.zoom-out-on-hover:hover {
+  transform: scale(0.95);
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+video {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.dcenter-div {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-rounded {
+  border-radius: 1rem;
+}
+
+.textcap {
+  text-transform: capitalize;
+}
+
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+.resume div {
+  background-color: #4a9dfb;
+  display: inline-block;
+  position: relative;
+  padding: 5px 34px 5px 5px;
+  border-radius: 10px;
+  color: #fff;
+  border-radius: 3px
+}
+
+.resume div:after {
+  content: "\f019";
+  font-family: fontAwesome;
+  position: absolute;
+  text-decoration: inherit;
+  font-size: 20px;
+  border-radius: 3px;
+  color: #000;
+  background-color: #fff;
+  opacity: 0.4;
+  padding: 2px 5px;
+  margin-left: 5px;
+  top: 0;
+}
+
+.linked div:after {
+  content: "\f08c" !important;
+}
+
+.resume div:hover {
+  background: #1976d2;
+  scale: 1.1;
+  cursor: pointer;
+}
+
+.resume div:active {
+  background: #596268;
+}
+
+.annimateleft {
+  animation: 1s linear 0s 1 slideInLeft;
+}
+
+.myBtn {
+  display: block;
+  position: fixed;
+  top: 100px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: rgb(66, 118, 231);
+  color: white;
+  cursor: pointer;
+  padding: 15px 10px 10px;
+  border-radius: 50%;
+}
+
+.myBtn:hover {
+  background-color: #555;
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.annimateright {
+  animation: 1s linear 0s 1 slideInRight;
+}
+
+.annimaterighttwo {
+  animation: 1.1s linear 0s 1 slideInRight;
+}
+
+.annimaterightthree {
+  animation: 1.2s linear 0s 1 slideInRight;
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+  }
+
+  /* 50%{
+    transform: translateX(20%);
+  } */
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* error page animation */
+.loading {
+  font-weight: bold;
+  display: inline-block;
+  font-family: monospace;
+  font-size: 30px;
+  clip-path: inset(0 3ch 0 0);
+  animation: l 1s steps(4) infinite;
+}
+
+@keyframes l {
+  to {
+    clip-path: inset(0 -1ch 0 0)
+  }
+}
+
+.waviy {
+  position: relative;
+  -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0, 0, 0, .3));
+  font-size: 60px;
+}
+
+.waviy span {
+  font-family: 'Alfa Slab One', cursive;
+  position: relative;
+  display: inline-block;
+  color: #000;
+  text-transform: uppercase;
+  animation: waviy 2s infinite;
+  animation-delay: calc(.1s * var(-i));
+
+}
+
+@keyframes waviy {
+
+  0%,
+  40%,
+  100% {
+    transform: translateY(0)
+  }
+
+  20% {
+    transform: translateY(-30px)
+  }
+}
+
+.main {
+  display: flex;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.aboutcontainer {
+  display: flex;
+  width: 50%;
+}
+
+.car {
+  height: 200px;
+  flex: 1;
+  margin: 0 2px;
+  box-shadow: 0 0 50px #0002;
+  overflow: hidden;
+  border-radius: 4px;
+  transition: .3s;
+}
+
+.car img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  filter: grayscale(1);
+}
+
+.car:hover {
+  flex: 3;
+}
+
+.car:hover img {
+  filter: none;
+}
+
+@media (max-width: 600px) {
+  .aboutcontainer {
+    width: 80%;
+  }
+}
+
+/* Custom styles for the text */
+.text-background-wrapper {
+  display: inline-block;
+  /* Restrict width to content */
+}
+
+.custom-bg-warning {
+  background-color: #ffc107;
+  /* Yellow warning color */
+  border-radius: 5px;
+  /* Rounded corners */
+}
+
+.custom-text-padding {
+  padding: 0.25rem 0.5rem;
+  /* Add padding around text */
+}
+
+.custom-rounded {
+  border-radius: 0.25rem;
+}
+
+.custom-text-lg {
+  font-size: 1.3rem;
+  /* Large text */
+}
+
+.custom-font-bold {
+  font-weight: bold;
+}
+
+.custom-text-white {
+  color: white;
+}
+
+/* Cursor blinking effect */
+.custom-cursor::after {
+  content: "|";
+  /* Add the cursor as pseudo-content */
+  display: inline-block;
+  animation: custom-blink 1s step-start infinite;
+}
+
+@keyframes custom-blink {
+  50% {
+    opacity: 0;
+  }
 }
