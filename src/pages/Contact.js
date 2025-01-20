@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import mail from "./../assets/images/mail.jpg";
@@ -8,7 +8,7 @@ import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import PermPhoneMsgOutlinedIcon from '@mui/icons-material/PermPhoneMsgOutlined';
-import background from '../assets/videos/background.mp4'
+// import background from '../assets/videos/background.mp4'
 
 
 
@@ -21,6 +21,11 @@ export default function Contact() {
     reset,
     formState: { errors },
   } = useForm();
+  useEffect(() => {
+    console.log(process.env.REACT_APP_EMAILJS_SERVICE_ID,
+    );
+
+  }, [])
 
 
   const onSubmit = async (data) => {
@@ -44,8 +49,8 @@ export default function Contact() {
 
   return (
     <>
-      <video loop autoPlay muted src={background} type="video/mp4" className="background-video" />
-      <div className="container dcenter-div rounded-circle">
+      {/* <video loop autoPlay muted src={background} type="video/mp4" className="background-video" /> */}
+      <div className="container dcenter-div rounded-circle  mt-5" id="contact">
         <div className="card shadow">
           <div className="card-header ">
             <h3>Send me a message</h3>

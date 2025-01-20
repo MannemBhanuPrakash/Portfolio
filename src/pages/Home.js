@@ -2,9 +2,13 @@ import React, { useEffect, useRef } from "react";
 import hello from "../assets/images/hero1.png";
 import MyResume from "../assets/files/MyResume.pdf";
 import video from "../assets/videos/video.mp4";
+import darkvideo from "../assets/videos/dark2.mp4";
+
+import { useTheme } from "../ThemeContext";
 
 
 function Home() {
+  const { mode } = useTheme()
   const animatedTextRef = useRef(null);
 
   useEffect(() => {
@@ -55,9 +59,9 @@ function Home() {
 
 
   return (
-    <>
-      <video loop autoPlay muted src={video} type="video/mp4" className="background-video" />
-      <div className="container">
+    <span id="home" style={{ paddingTop: 60 }}>
+        <video loop autoPlay muted src={ (mode === "light" ? video:darkvideo )} type="video/mp4" className="background-video" />
+      <div className="container" >
         <div className="row featurette dcenter-div">
           <div className="col-md-7 order-md-2">
             <h2 className="featurette-heading annimateright">
@@ -101,7 +105,7 @@ function Home() {
 
         </div>
       </div>
-    </>
+    </span>
   );
 }
 

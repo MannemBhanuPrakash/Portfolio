@@ -7,12 +7,12 @@ import 'aos/dist/aos.css';
 
 const About = () => {
   useEffect(() => {
-    AOS.init({ duration: 2000 });
+    AOS.init({ duration: 1000 });
   }, []);
 
   return (
-    <div className="container py-5">
-      <div className="row justify-content-center text-center">
+    <div className="container" id='about' >
+      <div className="row justify-content-center text-center" style={{ paddingTop: 60 }}  >
         <div className="col-md-8">
           <h1 className="display-4 fw-bold" data-aos="fade-down">Bhanu Prakash Mannem</h1>
           <p className="lead text-muted" data-aos="fade-up">
@@ -60,7 +60,7 @@ const About = () => {
         <div className="col-12" >
           <h3 className="fw-bold" data-aos="zoom-in">Projects</h3>
           <div className="card mb-3" data-aos="zoom-in">
-            <div className="card-body ">
+            <div className="card-body" style={{ color: '#000' }}>
               <h4 className="card-title">Storage Auctions</h4>
               <p className="card-text">
                 Developed an online marketplace for storage auctions using React.js and TypeScript, enabling real-time bidding and seamless
@@ -77,7 +77,7 @@ const About = () => {
             </div>
           </div>
           <div className="card mb-3" data-aos="zoom-in">
-            <div className="card-body">
+            <div className="card-body" style={{ color: '#000' }}>
               <h4 className="card-title">HRMS</h4>
               <p className="card-text">
                 Streamlined HR onboarding processes by developing a portal with React.js, featuring automated form population and PDF generation.
@@ -95,7 +95,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="row mt-5">
+      <div className="row mt-2">
         <div className="col-12 text-center" data-aos="fade-up">
           <h3 className="fw-bold">Connect with Me</h3>
           <a href="mailto:bhanuprakashmannem20@gmail.com" className="btn btn-primary m-2" title='E-Mail' target="_blank" rel="noopener noreferrer"><MdEmail size={25} />          </a>

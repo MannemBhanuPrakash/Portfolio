@@ -51,7 +51,7 @@ function Header() {
                 variant="h6"
                 noWrap
                 component="a"
-                href="/home"
+                href="/"
                 sx={{
                   flexGrow: 1,
                   display: { xs: 'none', md: 'block' },
@@ -72,7 +72,8 @@ function Header() {
                 {pages.map((page, index) => (
                   <Button
                     key={index}
-                    href={page}
+                    href={`#${page}`}
+                    // href={page}
                     onClick={handleCloseNavMenu}
                     sx={{
                       my: 2,
@@ -134,8 +135,8 @@ function Header() {
                 {pages.map((page) => (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
                     <Button
-                      href={page}
-                      sx={{ color: 'black' }}
+                    href={`#${page}`}
+                    sx={{ color: 'black' }}
                     >
                       {page}
                     </Button>
@@ -185,11 +186,6 @@ function Header() {
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
               >
-                {/* {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
-                  </MenuItem>
-                ))} */}
                 <MenuItem onClick={() => {
                   handleCloseUserMenu();
                   toggleTheme();
