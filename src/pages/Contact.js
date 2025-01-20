@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import mail from "./../assets/images/mail.jpg";
@@ -8,28 +8,25 @@ import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import PermPhoneMsgOutlinedIcon from '@mui/icons-material/PermPhoneMsgOutlined';
-// import background from '../assets/videos/background.mp4'
-
-
-
+import CircularProgress from '@mui/material/CircularProgress';
 
 export default function Contact() {
   const { showAlert } = useAlert();
+  const [loading, setLoading] = useState(false); // Track the loading state
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm();
+
   useEffect(() => {
-    console.log(process.env.REACT_APP_EMAILJS_SERVICE_ID,
-    );
-
-  }, [])
-
+    console.log(process.env.REACT_APP_EMAILJS_SERVICE_ID);
+  }, []);
 
   const onSubmit = async (data) => {
     try {
+      setLoading(true); // Set loading to true when form is being submitted
       const response = await emailjs.send(
         process.env.REACT_APP_EMAILJS_SERVICE_ID,
         process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
@@ -43,14 +40,14 @@ export default function Contact() {
     } catch (error) {
       console.error("FAILED...", error);
       showAlert("error", "Failed to send the message. Please try again.");
+    } finally {
+      setLoading(false); // Set loading to false after form submission is complete
     }
   };
 
-
   return (
     <>
-      {/* <video loop autoPlay muted src={background} type="video/mp4" className="background-video" /> */}
-      <div className="container dcenter-div rounded-circle  mt-5" id="contact">
+      <div className="container dcenter-div rounded-circle mt-5" id="contact">
         <div className="card shadow">
           <div className="card-header ">
             <h3>Send me a message</h3>
@@ -152,8 +149,18 @@ export default function Contact() {
                     </div>
 
                     <div className="d-flex">
-                      <button className="btn btn-primary mr-2" type="submit">
-                        Send <BiSend size={20} className="pt-1" />
+                      <button
+                        className="btn btn-primary mr-2"
+                        type="submit"
+                        disabled={loading} // Disable the button while loading
+                      >
+                        {loading ? (
+                          <CircularProgress size={24} sx={{ color: 'white' }} /> // Show loading spinner
+                        ) : (
+                          <>
+                            Send <BiSend size={20} className="pt-1" />
+                          </>
+                        )}
                       </button>
                       <button
                         className="btn btn-danger"
@@ -188,7 +195,7 @@ export default function Contact() {
                         2-58, Main Bazar, Bobbepali, Martur, Bapatla, Andhra
                         Pradesh - 523301.
                       </a>
-                      <div >
+                      <div>
                         <a
                           href="https://www.linkedin.com/in/mannembhanuprakash"
                           target="_blank"
@@ -199,7 +206,7 @@ export default function Contact() {
                           linkedin.com/in/mannembhanuprakash
                         </a>
                       </div>
-                      <div >
+                      <div>
                         <a
                           href="mailto:bhanuprakashmannem20@gmail.com"
                           rel="noreferrer"
@@ -212,7 +219,8 @@ export default function Contact() {
                       <div className="d-flex mt-2">
                         <a href="tel:+918184959300" className="d-flex">
                           <PermPhoneMsgOutlinedIcon sx={{ mr: 1 }} />
-                          +91-8184959300</a>
+                          +91-8184959300
+                        </a>
                       </div>
                     </p>
                   </div>
