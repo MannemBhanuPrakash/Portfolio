@@ -5,7 +5,7 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 
 // import Test from './pages/test';
-// import Router from './router/Routes';
+import Router from './router/Routes';
 
 
 function App() {
@@ -13,9 +13,10 @@ function App() {
     <>
       {/* <Test/> */}
       <Header/>
-      <Home/>
+      {/* <Home/>
       <About/>
-      <Contact />
+      <Contact /> */}
+      <Router/>
       {/* <Header />
       <Router/> */}
     </>
