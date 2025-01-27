@@ -60,7 +60,7 @@ function Home() {
 
   return (
     <span id="home" style={{ paddingTop: 60 }}>
-        <video loop autoPlay muted src={ (mode === "light" ? video:darkvideo )} type="video/mp4" className="background-video" />
+      <video loop autoPlay muted src={(mode === "light" ? video : darkvideo)} type="video/mp4" className="background-video" />
       <div className="container" >
         <div className="row featurette dcenter-div">
           <div className="col-md-7 order-md-2">
@@ -88,7 +88,7 @@ function Home() {
               effectively. Excels in hands-on testing, debugging, and optimization to ensure consistency, scalability,
               and high performance.
             </p>
-            <a href={MyResume} download="BhanuResume">
+            <a href={MyResume} download="BhanuPrakashresume.pdf">
               <div className="resume annimaterightthree mt-4">
                 <div>Resume</div>
               </div>
