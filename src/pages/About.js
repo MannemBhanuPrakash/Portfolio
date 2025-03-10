@@ -66,7 +66,7 @@ const About = () => {
                 Developed an online marketplace for storage auctions using React.js and TypeScript, enabling real-time bidding and seamless
                 user engagement.
               </p>
-              <p><strong>Technologies Used:</strong> React.js, TypeScript, Redux, HTML5, CSS3</p>
+              <p><strong>Technologies Used:</strong> React.js, TypeScript, Redux, HTML5, CSS3, Mui, Tailwind CSS</p>
               <p><strong>Responsibilities:</strong></p>
               <ul>
                 <li>Implemented real-time bidding features to enhance user engagement.</li>
@@ -82,7 +82,7 @@ const About = () => {
               <p className="card-text">
                 Streamlined HR onboarding processes by developing a portal with React.js, featuring automated form population and PDF generation.
               </p>
-              <p><strong>Technologies Used:</strong> React.js, Redux, HTML5, CSS3, JavaScript</p>
+              <p><strong>Technologies Used:</strong> React.js, Redux, HTML5, CSS3, JavaScript, Bootstrap</p>
               <p><strong>Responsibilities:</strong></p>
               <ul>
                 <li>Designed and implemented a user-friendly onboarding interface.</li>
@@ -100,7 +100,7 @@ const About = () => {
           <h3 className="fw-bold">Connect with Me</h3>
           <a href="mailto:bhanuprakashmannem20@gmail.com" className="btn btn-primary m-2" title='E-Mail' target="_blank" rel="noopener noreferrer"><MdEmail size={25} />          </a>
           <a href="tel:+918184959300" className="btn btn-primary m-2 " title='Mobile' ><MdPhone size={25} /></a>
-          <a href="https://www.linkedin.com/in/mannem-bhanuprakash-bb4954133" title='LinkedIn' className="btn btn-primary m-2" target="_blank" rel="noopener noreferrer"><FaLinkedinIn size={25} />          </a>
+          <a href="https://www.linkedin.com/in/mannembhanuprakash" title='LinkedIn' className="btn btn-primary m-2" target="_blank" rel="noopener noreferrer"><FaLinkedinIn size={25} />          </a>
         </div>
       </div>
     </div>
