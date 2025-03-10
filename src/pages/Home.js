@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import hello from "../assets/images/hero1.png";
-import BhanuPrakashResume from "../assets/files/MyResume.pdf";
+import BhanuPrakashResume from "../assets/files/BhanuPrakashresume.pdf";
 import video from "../assets/videos/video.mp4";
 import darkvideo from "../assets/videos/dark2.mp4";
 
