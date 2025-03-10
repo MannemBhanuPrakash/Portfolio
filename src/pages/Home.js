@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import hello from "../assets/images/hero1.png";
-import MyResume from "../assets/files/MyResume.pdf";
+import BhanuPrakashResume from "../assets/files/MyResume.pdf";
 import video from "../assets/videos/video.mp4";
 import darkvideo from "../assets/videos/dark2.mp4";
 
@@ -88,7 +88,7 @@ function Home() {
               effectively. Excels in hands-on testing, debugging, and optimization to ensure consistency, scalability,
               and high performance.
             </p>
-            <a href={MyResume} download="BhanuPrakashresume.pdf">
+            <a href={BhanuPrakashResume} download="BhanuPrakashresume.pdf">
               <div className="resume annimaterightthree mt-4">
                 <div>Resume</div>
               </div>
